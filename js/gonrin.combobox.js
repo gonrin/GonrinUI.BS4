@@ -707,6 +707,12 @@
         	if(groupElement){
         		groupElement.show();
         	}
+        },
+        setDataSource = function(dataSource){
+        	if(!!dataSource){
+        		options.dataSource = dataSource;
+        		setupWidget();
+        	}
         }
         ;
 
@@ -744,6 +750,7 @@
         //grobject.getIndex = getIndex;
         grobject.validate = validate;
         grobject.setState = setState;
+        grobject.setDataSource = setDataSource;
         
         
         grobject.disable = function () {
@@ -781,6 +788,9 @@
             }
             if (textElement){
             	textElement.prop('readonly', true);
+            }
+            if (input){
+            	input.prop('readonly', true);
             }
             return grobject;
         };
